@@ -1,4 +1,3 @@
-
 /* function func1() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -78,7 +77,7 @@ const User = async () => {
     }); */
 }
 //User();
-let cache = new Map();
+/* let cache = new Map();
 const hasUser = (url) => {
     if(cache.has(url)){
         return Promise.resolve(cache.get(url))
@@ -94,4 +93,32 @@ const hasUser = (url) => {
 }
 hasUser('https://api.github.com/users/ismail61').then(promise => {
     console.log(cache)
-})
+}) */
+
+
+//async & await
+
+let gitUser1 = async () => {
+    /* try {
+        let gitUserFetch = await fetch('https://api.github.com/users/ismail61')
+        let gitUser = await gitUserFetch.json()
+        console.log(gitUser)
+    } catch (error) {
+        console.log(error)
+    }
+     */
+    try {
+        let allRequests = await Promise.all([
+            fetch('https://api.github.com/users/ismail61'),
+            fetch('https://api.github.com/users/arnafi')
+        ])
+        allRequests.forEach(async requests => {
+            let usr = await requests.json()
+            console.log(usr)
+        })
+    } catch (error) {
+        throw new Error('TypeError!')
+    }
+}
+
+gitUser1()
