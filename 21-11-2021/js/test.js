@@ -78,7 +78,7 @@ console.log(+number);
 console.log(Number.MAX_SAFE_INTEGER);
 const mixed = [12n,5,-40n,4,5,70]
 console.log(mixed.sort());
-if (0n) {
+if (1n) {
     console.log('if!')
   } else {
     console.log('else!')
