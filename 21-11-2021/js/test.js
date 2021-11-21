@@ -69,7 +69,7 @@ const bigInt1 = 72;
 console.log(bigInt+bigInt1);//Cannot mix BigInt and other types, use explicit conversions
 console.log(BigInt(10)); */
 
-let bigInt2 = 10n;
+/* let bigInt2 = 10n;
 let number = 3;
 console.log(bigInt2 + BigInt(number));
 console.log(number + Number(bigInt2));
@@ -82,4 +82,13 @@ if (1n) {
     console.log('if!')
   } else {
     console.log('else!')
-  }
+  } */
+
+console.log(window.innerHeight);
+document.body.style.background = 'green'
+setTimeout(document.body.style.background="",5000)
+console.log(location.href);
+/* if(confirm('Go to wikipedia')){
+    //location.href = 'https://wikipedia.org'
+} */
+console.log(navigator.userAgent);
